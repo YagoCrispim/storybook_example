@@ -1,10 +1,12 @@
+/* eslint-disable multiline-ternary */
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 
 import { Button } from './Button'
 import './header.css'
 
 type User = {
-  name: string,
+  name: string
   age?: string
 }
 
@@ -19,7 +21,7 @@ export const Header = ({
   user,
   onLogin,
   onLogout,
-  onCreateAccount,
+  onCreateAccount
 }: HeaderProps) => (
   <header>
     <div className="wrapper">
@@ -52,7 +54,11 @@ export const Header = ({
           <>
             <span className="welcome">
               age: {user.age}
-              Welcome, <b>{user.name} - Age: {user.age}</b>!
+              Welcome,{' '}
+              <b>
+                {user.name} - Age: {user.age}
+              </b>
+              !
             </span>
             <Button size="small" onClick={onLogout} label="Log out" />
           </>

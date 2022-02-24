@@ -1,13 +1,16 @@
 import { AvatarProps } from './Avatar.types'
 
 export const Avatar = (props: AvatarProps) => {
-  const { alt, circle, src } = props
+  const { alt, circle, src, maxWidth } = props
 
   return (
     <img
-      src={src}
+      src={src || 'https://via.placeholder.com/300'}
       alt={alt}
-      className={`${circle ? 'rounded-full' : 'rounded-md'} profile`}
+      style={{
+        maxWidth: `${maxWidth || '500'}px`,
+        borderRadius: circle ? '100%' : ''
+      }}
     />
   )
 }
